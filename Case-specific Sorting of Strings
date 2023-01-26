@@ -1,0 +1,50 @@
+class Solution
+{
+    public:
+    //Function to perform case-specific sorting of strings.
+    string caseSort(string str, int n)
+    {
+         vector <char> up,lw;
+
+        for(int i=0;i<n;i++){
+
+            if(isupper(str[i])){
+
+                up.push_back(str[i]);
+
+                str[i] = 'U';
+
+            }
+
+            else
+
+                lw.push_back(str[i]);
+
+        }
+
+        sort(up.begin(),up.end());
+
+        sort(lw.begin(),lw.end());
+
+        int j = 0,k = 0;
+
+        for(int i=0;i<str.length();i++){
+
+            if(str[i] == 'U'){
+
+                str[i] = up[j++];
+
+            }
+
+            else{
+
+                str[i] = lw[k++];
+
+            }
+
+        }
+
+        return str;
+        // your code here
+    }
+};
