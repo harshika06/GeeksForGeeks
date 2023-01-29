@@ -1,0 +1,23 @@
+class Solution {
+    public static int solve(int a, int b) {
+        
+          if(a==b){
+
+            return 0;
+
+        }
+
+        else if((a&b)==Math.min(a,b)){
+
+            return 1;
+
+        }
+
+        else{
+
+            return 2;
+
+        }
+        // code here
+    }
+}
