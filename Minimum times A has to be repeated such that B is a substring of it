@@ -1,0 +1,17 @@
+class Solution {
+    static int minRepeats(String A, String B) {
+        // code here
+        String hash = "";
+        int counter = 0;
+        while(hash.length()<=2*B.length())
+        {
+            hash += A;
+            counter++;
+            if(hash.contains(B))
+            {
+                return counter;
+            }
+        }
+        return -1;
+    }
+};
