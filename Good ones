@@ -1,0 +1,19 @@
+class Solution {
+    public static int goodStones(int n, int[] arr) {
+        // code here
+        Boolean [] v = new Boolean[n];
+        int ans=0;
+        for(int i=0; i<n; i++){
+            rec(i, v, arr, n);
+        }
+        for(boolean k: v) if(k) ans++;
+        return ans;
+    }
+    public static boolean rec(int i, Boolean [] v, int[]a, int n){
+        if(i>=n || i<0) return true;
+        if(v[i]!=null && v[i]== false) return false;
+        v[i]= false;
+        v[i]= rec(i+a[i], v, a, n);
+        return v[i];
+    }
+}
